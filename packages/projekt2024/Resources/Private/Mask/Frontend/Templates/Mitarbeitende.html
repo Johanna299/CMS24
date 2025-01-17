@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+    <f:for each="{data.tx_mask_photo}" as="file">
+        <!-- Wenn ein Bild vorhanden ist, dann als card-img-top anzeigen -->
+        <f:if condition="{file}">
+            <img src="{file.publicUrl}" class="card-img-top" alt="{file.description}" />
+        </f:if>
+    </f:for>
+    <div class="card-body">
+        <!-- Name der Person als Card-Titel -->
+        <f:if condition="{data.tx_mask_name}">
+            <h5 class="card-title">{data.tx_mask_name}</h5>
+        </f:if>
+        <!-- Jobposition als Card-Text -->
+        <f:if condition="{data.tx_mask_jobposition}">
+            <p class="card-text">{data.tx_mask_jobposition}</p>
+        </f:if>
+        <!-- Zitat als Card-Text -->
+        <f:if condition="{data.tx_mask_quote}">
+            <p class="card-text"><small class="text-muted">{data.tx_mask_quote -> f:format.nl2br()}</small></p>
+        </f:if>
+    </div>
+</div>
