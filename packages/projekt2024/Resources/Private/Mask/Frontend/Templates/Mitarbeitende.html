@@ -8,11 +8,11 @@
     <div class="card-body">
         <!-- Name der Person als Card-Titel -->
         <f:if condition="{data.tx_mask_name}">
-            <h5 class="card-title">{data.tx_mask_name}</h5>
+            <h3 class="card-title">{data.tx_mask_name}</h3>
         </f:if>
         <!-- Jobposition als Card-Text -->
         <f:if condition="{data.tx_mask_jobposition}">
-            <p class="card-text">{data.tx_mask_jobposition}</p>
+            <p class="card-text jobpos">{data.tx_mask_jobposition}</p>
         </f:if>
         <!-- Zitat als Card-Text -->
         <f:if condition="{data.tx_mask_quote}">
