@@ -32,5 +32,32 @@ page {
     }
 }
 
+plugin.tx_news {
+    settings {
+        #displayDummyIfNoMedia = 1
+        cropMaxCharacters = 200
+        list {
+            paginate {
+                itemsPerPage = 5
+                insertAbove = false
+                insertBelow = true
+            }
+            media {
+                image {
+                    maxWidth = 249
+                    maxHeight = 191
+                }
+            }
+        }
+    }
+    _LOCAL_LANG{
+        de{
+            more-link=Mehr lesen
+            back-link=zur Liste
+            dateFormat=%d.%m.%Y
+        }
+    }
+}
+
 # to show errors
 page.config.contentObjectExceptionHandler = 0
