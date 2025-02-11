@@ -64,7 +64,6 @@ plugin.bootstrap_package.settings.scss {
 ############
 plugin.tx_news.view.twb5 {
     templateRootPath = EXT:projekt2024/Resources/Private/Templates/
-    # to enable using mask content elements (Adoptionstieritem) as a partial
     partialRootPath = EXT:projekt2024/Resources/Private/Partials/
     layoutRootPath = EXT:projekt2024/Resources/Private/Layouts/
 }

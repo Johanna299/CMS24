@@ -3,32 +3,61 @@
       data-namespace-typo3-fluid="true">
 <!--
 	=====================
-		Partials/List/TierItem.html
+		Partials/List/TierItem.html (Card-Layout)
 -->
-<div class="card" style="width: 18rem;">
-  <f:for each="{data.tx_mask_photo}" as="file">
-    <f:if condition="{file}">
-      <img src="{file.publicUrl}" class="card-img-top" alt="{file.description}" />
-    </f:if>
-  </f:for>
-  <div class="card-body">
-    <!-- Name des Tiers -->
-    <f:if condition="{data.tx_mask_name}">
-      <h3 class="card-title">{data.tx_mask_name}</h3>
-    </f:if>
-    <!-- Tierart -->
-    <f:if condition="{data.tx_mask_species}">
-      <p class="card-text species">{data.tx_mask_species}</p>
-    </f:if>
-    <!-- Alter -->
-    <f:if condition="{data.tx_mask_age}">
-      <p class="card-text age">Alter: {data.tx_mask_age}</p>
-    </f:if>
-    <!-- Beschreibung -->
-    <f:if condition="{data.tx_mask_description}">
-      <p class="card-text"><small class="text-muted">{data.tx_mask_description -> f:format.nl2br()}</small></p>
-    </f:if>
-  </div>
-</div>
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+<li class="list-group-item">
+    <div class="card mb-3">
+        <!-- Bild oben -->
+        <f:if condition="{newsItem.mediaPreviews}">
+            <f:then>
+                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                    <f:media class="card-img-top" file="{newsItem.mediaPreviews.0}"
+                             title="{newsItem.mediaPreviews.0.originalResource.title}"
+                             alt="{newsItem.mediaPreviews.0.originalResource.alternative}"
+                             loading="{settings.list.media.image.lazyLoading}"
+                             width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}"
+                             height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}" />
+                </n:link>
+            </f:then>
+            <f:else>
+                <f:if condition="{settings.displayDummyIfNoMedia}">
+                    <f:image class="card-img-top img-dummy" src="{settings.list.media.dummyImage}" title="" alt=""
+                             loading="{settings.list.media.image.lazyLoading}"
+                             maxWidth="{settings.list.media.image.maxWidth}"
+                             maxHeight="{settings.list.media.image.maxHeight}" />
+                </f:if>
+            </f:else>
+        </f:if>
 
+        <!-- Card-Body -->
+        <div class="card-body articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
+             itemscope="itemscope" itemtype="http://schema.org/Article">
+            <h3 class="card-title" itemprop="headline">
+                {newsItem.title}
+            </h3>
+
+            <f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}" />
+
+            <!-- Teaser oder Bodytext -->
+            <p class="card-text" itemprop="description">
+                <n:removeMediaTags>
+                    <f:if condition="{newsItem.teaser}">
+                        <f:then>
+                            {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+                        </f:then>
+                        <f:else>
+                            {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+                        </f:else>
+                    </f:if>
+                </n:removeMediaTags>
+            </p>
+
+            <!-- Button -->
+            <n:link newsItem="{newsItem}" settings="{settings}" class="btn btn-primary btn-read-more" title="{newsItem.title}">
+                <f:translate key="more-link" />
+            </n:link>
+        </div>
+    </div>
+</li>
 </html>
