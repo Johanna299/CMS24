@@ -1,0 +1,44 @@
+<div class="tier-info-container">
+    <!-- Bild -->
+    <div class="tier-info-image">
+        <f:for each="{data.tx_mask_infophoto}" as="file">
+            <f:media file="{file}" width="320" />
+        </f:for>
+    </div>
+
+    <!-- Textliche Informationen -->
+    <div class="tier-info-details">
+        <f:if condition="{data.tx_mask_infoid}">
+            <div class="tier-info-id">ID {data.tx_mask_infoid}</div>
+        </f:if>
+
+        <f:if condition="{data.tx_mask_infoname}">
+            <div class="tier-info-name">{data.tx_mask_infoname}</div>
+        </f:if>
+
+        <f:if condition="{data.tx_mask_inforace} || {data.tx_mask_infoage} || {data.tx_mask_infocastrated}">
+            <div class="tier-info-meta">
+                <h3>
+                    <f:if condition="{data.tx_mask_inforace}">
+                        <span>{data.tx_mask_inforace}</span><f:if condition="{data.tx_mask_infoage} || {data.tx_mask_infocastrated}">, </f:if>
+                    </f:if>
+                    <f:if condition="{data.tx_mask_infoage}">
+                        <span>{data.tx_mask_infoage}</span><f:if condition="{data.tx_mask_infocastrated}">, </f:if>
+                    </f:if>
+                    <f:if condition="{data.tx_mask_infocastrated}">
+                        <f:if condition="{data.tx_mask_infocastrated}">
+                            <span>kastriert</span>
+                        </f:if>
+                        <f:if condition="{data.tx_mask_infocastrated} == 0">
+                            <span>nicht kastriert</span>
+                        </f:if>
+                    </f:if>
+                </h3>
+            </div>
+        </f:if>
+
+        <f:if condition="{data.tx_mask_infolong}">
+            <div class="tier-info-text">{data.tx_mask_infolong -> f:format.nl2br()}</div>
+        </f:if>
+    </div>
+</div>
