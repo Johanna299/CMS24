@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{languagenavigation}">
+    <ul id="language_menu" class="language-menu">
+        <f:for each="{languagenavigation}" as="item" iteration="iterator">
+            <li class="{f:if(condition: item.active, then: 'active')} {f:if(condition: item.available, else: 'inactive')}">
+                <f:if condition="{item.available}">
+                    <f:then>
+                        <a href="{item.link}" hreflang="{item.hreflang}" title="{item.title}">
+                            <span>{item.twoLetterIsoCode -> f:format.case(mode: 'upper')}</span>
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <span>{item.twoLetterIsoCode -> f:format.case(mode: 'upper')}</span>
+                    </f:else>
+                </f:if>
+            </li>
+            <!-- separator after language elements, except if it is the last element -->
+            <f:if condition="!{iterator.isLast}">
+                <li class="language-separator">|</li>
+            </f:if>
+        </f:for>
+    </ul>
+</f:if>
+</html>

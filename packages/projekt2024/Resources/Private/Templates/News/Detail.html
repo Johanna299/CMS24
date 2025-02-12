@@ -70,11 +70,6 @@
                         </span>
                     </f:if>
 
-
-                    <f:if condition="{newsItem.categories}">
-						<f:render partial="Category/Items" arguments="{categories:newsItem.categories, settings:settings}" />
-					</f:if>
-
 					<f:if condition="{newsItem.tags}">
 						<!-- Tags -->
 						<span class="news-list-tags" itemprop="keywords">

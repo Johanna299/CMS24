@@ -1,12 +1,12 @@
 <div class="tier-info-container">
-    <!-- Bild -->
+    <!-- image -->
     <div class="tier-info-image">
         <f:for each="{data.tx_mask_infophoto}" as="file">
             <f:media file="{file}" width="320" />
         </f:for>
     </div>
 
-    <!-- Textliche Informationen -->
+    <!-- textual information -->
     <div class="tier-info-details">
         <f:if condition="{data.tx_mask_infoid}">
             <div class="tier-info-id">ID {data.tx_mask_infoid}</div>
