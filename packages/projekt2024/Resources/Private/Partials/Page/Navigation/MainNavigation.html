@@ -1,5 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <head>
+    <!-- include fontawesome.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -14,8 +15,10 @@
                     <!-- check for site "Login" (UID 39) -->
                     <f:if condition="{item.data.uid} == 39">
                         <li class="nav-item">
-                            <a href="{item.link}" class="nav-link">
-                                <i class="fa-solid fa-circle-user fa-2xl"></i> <!-- Icon for site "login" -->
+                            <a href="{item.link}" class="nav-link nav-link-main{f:if(condition: item.active, then:' active custom-active-class')}">
+                                <span class="nav-link-text">
+                                    <i class="fa-solid fa-circle-user fa-xl"></i> <!-- icon for site "Login" -->
+                                </span>
                             </a>
                         </li>
                     </f:if>

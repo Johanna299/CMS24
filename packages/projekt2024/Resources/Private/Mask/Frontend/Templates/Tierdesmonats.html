@@ -1,0 +1,25 @@
+<div class="tier-des-monats-banner">
+    <f:for each="{data.tx_mask_tierdesmonatsphoto}" as="file">
+        <f:media file="{file}" class="background-image"/>
+        {file.description}
+    </f:for>
+
+    <div class="overlay" onclick="flipOverlay(this)">
+        <div class="overlay-content">
+            <f:if condition="{data.tx_mask_tierdesmonatsname}">
+                <h3>Tier des Monats: {data.tx_mask_tierdesmonatsname}</h3>
+            </f:if>
+            <f:if condition="{data.tx_mask_tierdesmonatsdescription}">
+                <p>{data.tx_mask_tierdesmonatsdescription -> f:format.nl2br()} Klicken Sie auf das Fenster.</p>
+            </f:if>
+        </div>
+        <div class="overlay-flipped">
+            <p>Erfahren Sie alles über {data.tx_mask_tierdesmonatsname} und entdecken Sie, warum es unser Tier des Monats ist!</p>
+            <p>{data.tx_mask_tierdesmonatsname} freut sich auf alle Besucherinnen und Besucher und kann es kaum abwarten, ein neues Zuhause zu erhalten!</p>
+            <f:if condition="{data.tx_mask_tierdesmonatslink}">
+                <a href="{data.tx_mask_tierdesmonatslink}" class="btn btn-tertiary">Zum Tierprofil</a>
+            </f:if>
+        </div>
+    </div>
+</div>
+
