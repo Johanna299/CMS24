@@ -7,6 +7,7 @@
 -->
 <n:excludeDisplayedNews newsItem="{newsItem}" />
 <li class="list-group-item">
+
     <div class="card mb-3">
         <!-- Bild oben -->
         <f:if condition="{newsItem.mediaPreviews}">
@@ -33,9 +34,16 @@
         <!-- Card-Body -->
         <div class="card-body articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
              itemscope="itemscope" itemtype="http://schema.org/Article">
-            <h3 class="card-title" itemprop="headline">
+            <h3 class="h3">
                 {newsItem.title}
             </h3>
+            <div class="tierRendering">
+                <f:if condition="{newsItem.contentElements}">
+                    <!-- content elements -->
+                    <f:cObject typoscriptObjectPath="lib.tx_news.tierRendering">{newsItem.nonNestedContentElementIdList}</f:cObject>
+                </f:if>
+            </div>
+
 
             <!-- Teaser oder Bodytext -->
             <p class="card-text" itemprop="description">

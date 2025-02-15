@@ -26,10 +26,10 @@
                         <span>{data.tx_mask_infoage}</span><f:if condition="{data.tx_mask_infocastrated}">, </f:if>
                     </f:if>
                     <f:if condition="{data.tx_mask_infocastrated}">
-                        <f:if condition="{data.tx_mask_infocastrated}">
+                        <f:if condition="{data.tx_mask_infocastrated} == 1">
                             <span>kastriert</span>
                         </f:if>
-                        <f:if condition="{data.tx_mask_infocastrated} == 0">
+                        <f:if condition="{data.tx_mask_infocastrated} == 2">
                             <span>nicht kastriert</span>
                         </f:if>
                     </f:if>

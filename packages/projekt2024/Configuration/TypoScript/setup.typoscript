@@ -39,7 +39,7 @@ plugin.tx_news {
         cropMaxCharacters = 200
         list {
             paginate {
-                itemsPerPage = 5
+                itemsPerPage = 6
                 insertAbove = false
                 insertBelow = true
             }
@@ -62,3 +62,58 @@ plugin.tx_news {
 
 # to show errors
 page.config.contentObjectExceptionHandler = 0
+
+# data for custom rendering in partial TierItem.html
+# selectFields: add needed data fields from CE "Tierinfos" for list view of an animal
+# set custom rendering of every field:
+# [int] = TEXT # --> to generate text
+# [int] {
+#     required = 1
+#     wrap = [html] # --> set html-tags (rendering)
+#     field = [one selected field of CE "Tierinfos"]
+# }
+lib.tx_news.tierRendering = CONTENT
+lib.tx_news.tierRendering {
+    table = tt_content
+    select {
+        pidInList = 0
+        uidInList.current = 1
+        where = {#tx_container_parent}<1
+        orderBy = sorting
+        languageField = sys_language_uid
+        selectFields = tx_mask_inforace, tx_mask_infoage, tx_mask_infocastrated, tx_mask_infoshort
+    }
+    renderObj = COA
+    renderObj {
+        20 = TEXT
+        20 {
+            required = 1
+            wrap = <span class="h5">Rasse: </span><span>|</span><br>
+            field = tx_mask_inforace
+        }
+        30 = TEXT
+        30 {
+            required = 1
+            wrap = <span class="h5">Alter: </span><span>|</span><br>
+            field = tx_mask_infoage
+        }
+        40 = TEXT
+        40.value = <span class="h5">Kastriert: </span>
+        50 = CASE
+        50 {
+            key.field = tx_mask_infocastrated
+
+            1 = TEXT
+            1.value = Ja
+            2 = TEXT
+            2.value = Nein
+        }
+        60 = TEXT
+        60 {
+            required = 1
+            wrap = <br><br><span>|</span>
+            field = tx_mask_infoshort
+        }
+
+    }
+}

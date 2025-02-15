@@ -16,11 +16,11 @@
                 <f:if condition="{settings.hidePagination}">
                     <f:then>
                         <ul class="list-group mb-3">
-                            <f:if condition="{settings.templateLayout} == 1">
+                            <f:if condition="{settings.templateLayout}=1">
                                 <f:then>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
                                         <f:render partial="List/TierItem"
-                                                  arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
+                                                  arguments="{_all}" />
                                     </f:for>
                                 </f:then>
                                 <f:else>
@@ -38,7 +38,7 @@
                         </f:if>
                         <ul class="list-group mb-3">
                             <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                <f:if condition="{settings.templateLayout} == 1">
+                                <f:if condition="{settings.templateLayout}=1">
                                     <f:then>
                                         <f:render partial="List/TierItem"
                                                   arguments="{newsItem: newsItem, settings: settings, iterator: iterator}" />
