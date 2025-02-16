@@ -6,15 +6,26 @@
             <authorEmail>s2310456005@fhooe.at</authorEmail>
         </header>
         <body>
-        <trans-unit id="search">
-            <source>Search</source>
-            <target>Suche</target>
-        </trans-unit>
-        <trans-unit id="infobox_header">
-            <target>Hier kommt der Inhalt</target>
-        </trans-unit>
         <trans-unit id="more-link" xml:space="preserve">
             <target>Mehr lesen</target>
+        </trans-unit>
+        <trans-unit id="animalofthemonth">
+            <target>Tier des Monats</target>
+        </trans-unit>
+        <trans-unit id="animalofthemonthclick">
+            <target>Klicken Sie auf das Fenster</target>
+        </trans-unit>
+        <trans-unit id="animalofthemonthdesc1">
+            <target>Erfahren Sie alles über</target>
+        </trans-unit>
+        <trans-unit id="animalofthemonthdesc2">
+            <target>und entdecken Sie, warum es unser Tier des Monats ist</target>
+        </trans-unit>
+        <trans-unit id="animalofthemonthdesc3">
+            <target>freut sich auf alle Besucherinnen und Besucher und kann es kaum abwarten, ein neues Zuhause zu erhalten</target>
+        </trans-unit>
+        <trans-unit id="animalofthemonthbtn">
+            <target>Zum Tierprofil</target>
         </trans-unit>
         </body>
     </file>

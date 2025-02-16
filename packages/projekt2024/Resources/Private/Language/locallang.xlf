@@ -6,6 +6,24 @@
             <authorEmail>s2310456005@fhooe.at</authorEmail>
         </header>
         <body>
+        <trans-unit id="animalofthemonth">
+            <source>Animal of the month</source>
+        </trans-unit>
+        <trans-unit id="animalofthemonthclick">
+            <source>Click on the window</source>
+        </trans-unit>
+        <trans-unit id="animalofthemonthdesc1">
+            <source>Learn all about</source>
+        </trans-unit>
+        <trans-unit id="animalofthemonthdesc2">
+            <source>and discover why it is our Animal of the Month</source>
+        </trans-unit>
+        <trans-unit id="animalofthemonthdesc3">
+            <source>is excited to meet all visitors and can’t wait to find a new lovely home!</source>
+        </trans-unit>
+        <trans-unit id="animalofthemonthbtn">
+            <source>To the animal profile</source>
+        </trans-unit>
         </body>
     </file>
 </xliff>

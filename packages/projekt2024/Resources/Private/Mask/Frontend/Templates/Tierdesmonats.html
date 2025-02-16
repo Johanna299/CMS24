@@ -1,3 +1,7 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
 <div class="tier-des-monats-banner">
     <f:for each="{data.tx_mask_tierdesmonatsphoto}" as="file">
         <f:media file="{file}" class="background-image"/>
@@ -7,19 +11,20 @@
     <div class="overlay" onclick="flipOverlay(this)">
         <div class="overlay-content">
             <f:if condition="{data.tx_mask_tierdesmonatsname}">
-                <h3>Tier des Monats: {data.tx_mask_tierdesmonatsname}</h3>
+                <h3><f:translate key="LLL:EXT:projekt2024/Resources/Private/Language/locallang.xlf:animalofthemonth"/>: {data.tx_mask_tierdesmonatsname}</h3>
             </f:if>
             <f:if condition="{data.tx_mask_tierdesmonatsdescription}">
-                <p>{data.tx_mask_tierdesmonatsdescription -> f:format.nl2br()} Klicken Sie auf das Fenster.</p>
+                <p>{data.tx_mask_tierdesmonatsdescription -> f:format.nl2br()} <f:translate key="LLL:EXT:projekt2024/Resources/Private/Language/locallang.xlf:animalofthemonthclick"/>.</p>
             </f:if>
         </div>
         <div class="overlay-flipped">
-            <p>Erfahren Sie alles über {data.tx_mask_tierdesmonatsname} und entdecken Sie, warum es unser Tier des Monats ist!</p>
-            <p>{data.tx_mask_tierdesmonatsname} freut sich auf alle Besucherinnen und Besucher und kann es kaum abwarten, ein neues Zuhause zu erhalten!</p>
+            <p><f:translate key="LLL:EXT:projekt2024/Resources/Private/Language/locallang.xlf:animalofthemonthdesc1"/> {data.tx_mask_tierdesmonatsname} <f:translate key="LLL:EXT:projekt2024/Resources/Private/Language/locallang.xlf:animalofthemonthdesc2"/>!</p>
+            <p>{data.tx_mask_tierdesmonatsname} <f:translate key="LLL:EXT:projekt2024/Resources/Private/Language/locallang.xlf:animalofthemonthdesc3"/>!</p>
             <f:if condition="{data.tx_mask_tierdesmonatslink}">
-                <a href="{data.tx_mask_tierdesmonatslink}" class="btn btn-tertiary">Zum Tierprofil</a>
+                <a href="{data.tx_mask_tierdesmonatslink}" class="btn btn-tertiary"><f:translate key="LLL:EXT:projekt2024/Resources/Private/Language/locallang.xlf:animalofthemonthbtn"/></a>
             </f:if>
         </div>
     </div>
 </div>
 
+</html>
