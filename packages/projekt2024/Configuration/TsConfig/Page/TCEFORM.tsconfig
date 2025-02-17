@@ -6,6 +6,5 @@ TCEFORM {
     }
     tt_content {
         layout.addItems.14 =------------------
-        layout.addItems.15 = Custom Carousel Small
     }
 }

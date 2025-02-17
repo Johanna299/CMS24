@@ -29,7 +29,6 @@ page {
 
     includeJSFooter {
         projekt2024_scripts = EXT:projekt2024/Resources/Public/JavaScript/Dist/scripts.js
-        projekt2024_ce-script = EXT:projekt2024/Resources/Public/JavaScript/Dist/tierdesmonats_flip.js
     }
 }
 
