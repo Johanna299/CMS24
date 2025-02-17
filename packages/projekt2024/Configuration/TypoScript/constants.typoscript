@@ -67,3 +67,13 @@ plugin.tx_news.view.twb5 {
     partialRootPath = EXT:projekt2024/Resources/Private/Partials/
     layoutRootPath = EXT:projekt2024/Resources/Private/Layouts/
 }
+
+################
+### FE LOGIN ###
+################
+plugin.tx_felogin_login.view {
+    templateRootPath = EXT:projekt2024/Resources/Private/Templates/
+    partialRootPath = EXT:projekt2024/Resources/Private/Partials/
+    layoutRootPath = EXT:projekt2024/Resources/Private/Layouts/
+}
+

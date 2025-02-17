@@ -1,0 +1,27 @@
+<div class="frame-container frame-container-default">
+    <div class="download-item">
+        <!-- Download-image -->
+        <div class="download-image">
+            <f:for each="{data.tx_mask_downloadphoto}" as="file">
+                <f:media file="{file}" width="150" />
+            </f:for>
+        </div>
+
+        <!-- titel and description -->
+        <div class="download-text">
+            <f:if condition="{data.tx_mask_downloadtitle}">
+                <h3>{data.tx_mask_downloadtitle}</h3>
+            </f:if>
+            <f:if condition="{data.tx_mask_downloaddescprition}">
+                <p>{data.tx_mask_downloaddescprition -> f:format.nl2br()}</p>
+            </f:if>
+        </div>
+
+        <!-- Download-button -->
+        <div class="download-button">
+            <f:for each="{data.tx_mask_downloadfile}" as="file">
+                <a href="{file.publicUrl}" download class="btn btn-primary">Download</a>
+            </f:for>
+        </div>
+    </div>
+</div>
