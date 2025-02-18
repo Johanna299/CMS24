@@ -6,6 +6,12 @@
             <authorEmail>s2310456005@fhooe.at</authorEmail>
         </header>
         <body>
+        <trans-unit id="morelink" xml:space="preserve">
+            <source>Read more</source>
+        </trans-unit>
+        <trans-unit id="moredetails">
+            <source>Details</source>
+        </trans-unit>
         <trans-unit id="animalofthemonth">
             <source>Animal of the month</source>
         </trans-unit>
@@ -22,8 +28,9 @@
             <source>is excited to meet all visitors and can’t wait to find a new lovely home</source>
         </trans-unit>
         <trans-unit id="animalofthemonthbtn">
-            <source>To the animal profile</source>
+            <source>To the adoption form</source>
         </trans-unit>
+
         </body>
     </file>
 </xliff>

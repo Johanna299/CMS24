@@ -6,8 +6,11 @@
             <authorEmail>s2310456005@fhooe.at</authorEmail>
         </header>
         <body>
-        <trans-unit id="more-link" xml:space="preserve">
+        <trans-unit id="morelink" xml:space="preserve">
             <target>Mehr lesen</target>
+        </trans-unit>
+        <trans-unit id="moredetails">
+            <target>Details</target>
         </trans-unit>
         <trans-unit id="animalofthemonth">
             <target>Tier des Monats</target>
