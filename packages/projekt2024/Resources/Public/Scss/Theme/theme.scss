@@ -1,0 +1,452 @@
+//
+// Variables
+//
+@import "variables";
+
+//
+// Import needed Bootstrap Package Files
+//
+@import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
+
+// ----------------------------------------------------------------------------
+// General CSS
+// ----------------------------------------------------------------------------
+body{
+  font-family: 'Candara', sans-serif;
+  letter-spacing: 0.03rem;
+}
+
+p {
+  color: #333333;
+}
+
+// space after every content element
+.frame {
+  margin-bottom: 40px !important;
+}
+
+// space after element "header"
+.frame.frame-type-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 21px !important;
+}
+
+// buttons
+.btn {
+  --bs-btn-box-shadow: none; // delete box-shadow
+}
+
+.btn-tertiary, .btn-primary, .btn-outline-primary {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  background-color: $tertiary;
+  border: 2px solid $tertiary;
+
+  &:hover {
+    background-color: #FFFFFF;
+    color: $tertiary;
+    border: 2px solid $tertiary;
+  }
+}
+
+// images from the content element "Text & Images"
+.frame-type-textpic img {
+  max-width: 100%; /* image cannot be wider than its container */
+  max-height: 420px;
+  width: auto; /* auto-adjusting of the width */
+  height: auto; /* auto-adjusting of the height */
+}
+
+
+// ----------------------------------------------------------------------------
+// Menu Navigation
+// ----------------------------------------------------------------------------
+.nav-link-text{
+  font-family: 'Candara', sans-serif;
+  letter-spacing: 0.03rem;
+  font-size: 24px;
+}
+
+.navbar-nav{
+  justify-content: space-around;
+  --bs-nav-link-color: #4CAF50;
+  --bs-nav-link-hover-color: #4CAF50;
+}
+
+// delete the highlighting underlining of active menu items
+.navbar-mainnavigation {
+  --mainnavigation-hightlight: transparent;
+}
+
+// color of active menu items
+.nav-link.nav-link-main.active.custom-active-class .nav-link-text {
+  color: $tertiary !important;
+}
+
+// menu item "Spenden"
+#nav-item-27{
+  text-transform: uppercase;
+}
+
+// underlining of navigation bar
+.navbar-nav {
+  border-bottom: 3px solid $secondary;
+}
+
+// delete space after navbar
+.bp-page-header.navbar {
+  padding-bottom: 10px;
+}
+
+// delete box-shadow of navbar
+.bp-page-header.navbar {
+  box-shadow: none;
+}
+
+// ----------------------------------------------------------------------------
+// Content Elements
+// ----------------------------------------------------------------------------
+
+// Carousel Small
+.carousel-item-layout-secondary {
+  --carousel-item-background: $primary;
+}
+
+// images of Item "TextAndImage" in CE "Carousel Small"
+.carousel-content-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // grid: image and text split space
+  align-items: stretch;
+}
+
+.carousel-item-type-text_and_image {
+  max-height: 300px;
+}
+
+.carousel-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel-image img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// prev und next control buttons of CE "Carousel Small"
+.carousel-control {
+  background-color: $tertiary;
+  cursor: pointer;
+  border: 2px solid $tertiary;
+  opacity: 1 !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); // to position the button in the center
+
+  &:hover {
+    background-color: #FFFFFF;
+    color: $tertiary;
+  }
+}
+
+// indicators of CE "Carousel Small"
+.carousel-indicators button {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important; // round circle shape
+  background-color: $primary !important;
+  border: 2px solid #333333 !important;
+  opacity: 1 !important;
+
+  &.active {
+    background-color: #333333 !important; // color of active indicator
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  background-clip: unset; // delete padding around indicators
+}
+
+// Content Element "Mitarbeitende"
+.card {
+  width: 18rem;
+  min-height: 500px;
+}
+
+.card-body {
+  background-color: $primary;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+.jobpos {
+  font-weight: bold;
+}
+
+// "Kontakt" dividing line between 2 containers
+#p30 div.contentcontainer[data-container-identifier="container_2_columns"] div.contentcontainer-column[data-container-column="left"] {
+  border-right: 1px solid #333333;
+}
+
+// Content Element "Table"
+.table > :not(caption) > * > * {
+  background-color: $primary;
+}
+
+// space on Home-Site between CE "News article list" and button "To more news"
+#c125, #c160 {
+  margin-bottom: 10px !important;
+}
+
+#c126, #c161 {
+  padding-top: 0 !important; // delete padding
+}
+
+// space after "Sachspende" on Spenden-Site
+#c49, #c172 {
+  margin-bottom: 0 !important;
+}
+
+// space after header "Unsere Tiere" on Adoption-Site
+#c127 {
+  margin-bottom: 0 !important;
+}
+
+// first image on "Mission"-Site
+.frame-container-default {
+  width: 100%;
+  height: auto;
+}
+
+#c133, #c162 {
+  padding: 0 !important;
+}
+
+#c51, #c163 {
+  padding-top: 0 !important;
+}
+
+#c134 .gallery-item img {
+  max-width: 50% !important;
+}
+
+// ----------------------------------------------------------------------------
+// Download
+// ----------------------------------------------------------------------------
+.download-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #333333;
+}
+
+.download-text {
+  flex-grow: 1;
+}
+
+#p40 #page-footer {
+  margin-top: 42px;
+}
+
+// ----------------------------------------------------------------------------
+// Form
+// ----------------------------------------------------------------------------
+// Label of radio buttons
+#p36 legend{
+  color: #333333;
+  font-size: 16px !important;
+}
+
+// radio buttons
+.form-check-input:checked {
+  background-color: $tertiary;
+  border-color: $tertiary;
+}
+
+// ----------------------------------------------------------------------------
+// Extension "Sharethis"
+// ----------------------------------------------------------------------------
+#c153, #c154, #c155, #c156, #c157, #c158,
+#c169, #c178 {
+  padding: 0;
+}
+
+// ----------------------------------------------------------------------------
+// Login
+// ----------------------------------------------------------------------------
+#c149 {
+  margin-bottom: 0 !important;
+}
+
+.loginformular {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary;
+  border-radius: 8px;
+  padding-top: 10px;
+
+  form {
+    width: 90%;
+  }
+
+  a {
+    padding-bottom: 20px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    div {
+      margin: 10px 0;
+      width: 100%;
+
+      // submit button
+      &:nth-last-child(2) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// input fields
+.loginformular input[type="text"],
+.loginformular input[type="password"],
+.loginformular label {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+// downloads button
+.downloads-logout {
+  margin-bottom: 30px;
+}
+
+// ----------------------------------------------------------------------------
+// News
+// ----------------------------------------------------------------------------
+// "more"-button from news list
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// active pagination button
+.pagination {
+  --bs-pagination-active-color: white;
+  --bs-pagination-active-bg: #FF9800;
+  --bs-pagination-active-border-color: #FF9800;
+}
+
+// detail view
+#p34 {
+  .news-detail-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    .news-detail-left {
+      flex: 0 0 50%; // image takes half of the width
+      max-width: 600px;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .news-detail-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Footer
+// ----------------------------------------------------------------------------
+.footer-section-content {
+  background: #DFDFD9;
+}
+
+.section-row {
+  justify-content: space-between;
+}
+
+.frame {
+  margin-bottom: 0;
+}
+
+// ----------------------------------------------------------------------------
+// Container with language menu
+// ----------------------------------------------------------------------------
+.footer-language-wrapper {
+  width: 100%; // full width
+  background-color: $secondary;
+  padding: 20px 0;
+  color: white;
+  position: relative; // necessary for absolute positioning of impressum
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+}
+
+.footer-language-content {
+  max-width: 1200px;
+  width: 100%; // full width -> content can't be wider than the screen
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 15px; // to prevent cutting the content
+  box-sizing: border-box;
+}
+
+.footer-impressum {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); // exact centering
+  white-space: nowrap; // prevents new lines
+}
+
+// space between language elements and separator
+.footer-language .language-menu > li {
+  padding: 0;
+}
+
+// links and language elements
+.footer-language-wrapper a,
+.footer-language-wrapper .inactive {
+  color: white;
+}
+
+// ----------------------------------------------------------------------------
+// Import custom scss files
+// ----------------------------------------------------------------------------
+@import "_typography.scss";
+@import "_adoptionstiere.scss"; //scss for everything with adoption animals

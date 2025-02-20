@@ -1,0 +1,172 @@
+// ----------------------------------------------------------------------------
+// CE "News category menu" for animal categories on Adoption-Site
+// ----------------------------------------------------------------------------
+.news .btn-group.me-2 .btn-primary{
+  background-color: $secondary !important;
+  border: 2px solid $secondary !important;
+  font-size: 20px;
+
+  &:hover {
+    color: $secondary !important;
+    background-color: #FFFFFF !important;
+  }
+
+  .fas {
+    display: none; // hide folder-icon
+  }
+
+  .fa-minus {
+    color: #FFFFFF;
+  }
+}
+
+#c94 .news {
+  display: flex;
+  justify-content: space-around;
+}
+
+// delete space after news category menu
+#c94 {
+  margin-bottom: 0 !important;
+}
+
+// ----------------------------------------------------------------------------
+// "tierRendering" in list view
+// ----------------------------------------------------------------------------
+.tierRendering {
+  text-align: left;
+}
+
+// to show list items in rows
+ul.tierul {
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between;
+}
+
+// deleter border around every list item
+.list-group-tieritem {
+  border: none;
+}
+
+// ----------------------------------------------------------------------------
+// Content Element "Tierinfos" in detail view
+// ----------------------------------------------------------------------------
+.tier-info-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background-color: $primary;
+  width: 100vw; /* full width of viewport */
+  margin-left: calc(-50vw + 50%); /* horizontal offset for container */
+  padding: 20px 100px;
+
+  .tier-info-image {
+    flex-shrink: 0; /* image doesn't shrink */
+  }
+
+  .tier-info-details {
+    flex-grow: 1; /* text takes its place */
+  }
+
+  .tier-info-name {
+    font-weight: bold;
+    font-size: 36px;
+    color: #333333;
+  }
+}
+
+.news-backlink-wrap {
+  margin-top: 20px;
+}
+
+// ----------------------------------------------------------------------------
+// Content Element "Tierdesmonats"
+// ----------------------------------------------------------------------------
+.tier-des-monats-banner {
+  position: relative;
+  perspective: 1000px; // for 3D-effect
+
+  .background-image {
+    width: 100vw; // image width should be equal to screen width
+    height: auto;
+    max-height: 100vw;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.5); // transparent background-colour for overlay
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 10;
+    width: 90vw; // overlay takes 90% of screen width
+    height: 35vh; // overlay takes 35% of screen height
+    max-width: 400px;
+    max-height: 200px;
+    transition: transform 0.6s ease-in-out; // flipping-animation
+    transform-style: preserve-3d;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .overlay-content,
+    .overlay-flipped {
+      position: absolute;
+      top: 0;
+      left: 0; // both overlay sides start at the same place
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      backface-visibility: hidden; // prevents the overlay-sides from being see-through
+      transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    }
+
+    .overlay-content {
+      opacity: 1;
+      visibility: visible;
+      font-size: 14px;
+    }
+
+    .overlay-flipped {
+      transform: rotateY(180deg); // flip to the overlay backside
+      opacity: 0;
+      visibility: hidden;
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        margin-top: 10px;
+      }
+    }
+
+    &.flipped {
+      transform: rotateY(180deg); // flip
+
+      .overlay-content {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .overlay-flipped {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
